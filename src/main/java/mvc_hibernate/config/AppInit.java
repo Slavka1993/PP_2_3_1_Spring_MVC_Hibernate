@@ -1,6 +1,8 @@
 package mvc_hibernate.config;
+
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
 import javax.servlet.Filter;
 
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -8,7 +10,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     // Метод, указывающий на класс конфигурации
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { AppConfig.class };
+        return new Class[]{AppConfig.class};
     }
 
     @Override
@@ -22,7 +24,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     // Добавление конфигурации, в которой инициализируем ViewResolver, для корректного отображения jsp.
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {WebConfig.class};
+        return new Class[]{WebConfig.class};
     }
 
     /* Данный метод указывает url, на котором будет базироваться приложение */

@@ -11,7 +11,6 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -24,9 +23,6 @@ public class AppConfig {
 
     @Autowired
     private Environment env;
-
-//    @Autowired
-//    private UserDao userDao;
 
     @Bean
     public DataSource getDataSource() {

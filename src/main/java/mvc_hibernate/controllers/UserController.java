@@ -66,7 +66,7 @@ public class UserController {
     }
 
     @GetMapping("users/edit")
-    public String editUser (@RequestParam("id") Long id, Model model) {
+    public String editUser(@RequestParam("id") Long id, Model model) {
         User user = userDao.getUserById(id);
         model.addAttribute("user", user);
         return "users/edit";
