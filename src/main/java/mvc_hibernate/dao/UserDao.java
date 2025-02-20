@@ -9,13 +9,13 @@ import java.util.List;
 @Component
 public interface UserDao {
 
-    public void saveUser(User user);
+    void saveUser(User user);
 
-    public List<User> getAllUsers();
+    List<User> getAllUsers();
 
-    public User getUserById(Long id);
+    User getUserById(Long id);
 
-    public void updateUser(User user);
+    void updateUser(User user);
 
-    public void deleteUser(Long id);
+    void deleteUser(Long id);
 }
