@@ -1,43 +1,19 @@
 package mvc_hibernate.service;
 
-import mvc_hibernate.dao.UserDao;
 import mvc_hibernate.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
+public interface UserService {
 
-@Service
-public class UserService {
-    private final UserDao userDao;
+    List<User> getAllUsers();
 
-    @Autowired
-    public UserService(UserDao userDao) {
-        this.userDao = userDao;
-    }
+    void saveUser(User user);
 
-    public List<User> getAllUsers() {
-        return userDao.getAllUsers();
-    }
+    void updateUser(User user);
 
-    @Transactional
-    public void saveUser(User user) {
-        userDao.saveUser(user);
-    }
+    void deleteUser(Long id);
 
-    @Transactional
-    public void updateUser(User user) {
-        userDao.updateUser(user);
-    }
+    User getUserById(Long id);
 
-    @Transactional
-    public void deleteUser(Long id) {
-        userDao.deleteUser(id);
-    }
-
-    public User getUserById(Long id) {
-        return userDao.getUserById(id);
-    }
 }

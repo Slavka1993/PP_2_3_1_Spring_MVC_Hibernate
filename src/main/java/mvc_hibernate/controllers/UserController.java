@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @Controller
 @RequestMapping("/")
 public class UserController {
@@ -41,8 +40,14 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public String create(@ModelAttribute("user") User user) {
-        userService.saveUser(user);
+    public String create(@ModelAttribute("user") User user,
+                         @RequestParam(name = "сancel", required = false) String cancel) {
+        if (cancel != null) {
+            return "redirect:/users";
+        }
+        if (user.getName() == null && !user.getName().isEmpty()) {
+            userService.saveUser(user);
+        }
         return "redirect:/users";
     }
 

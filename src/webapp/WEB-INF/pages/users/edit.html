@@ -8,11 +8,15 @@
 <form th:action="@{/users/update}" method="post">
     <input type="hidden" name="id" th:value="${user.id}">
 
+    <div>
     <label>Name:</label>
     <input type="text" name="name" th:value="${user.name}"><br>
-
+    </div>
     <label>Lastname:</label>
-    <input type="text" name="lastname" th:value="${user.name}"><br>
+    <input type="text" name="lastname" th:value="${user.lastname}"><br>
+
+    <label>Email:</label>
+    <input type="text" name="email" th:value="${user.email}"><br>
 
     <button type="submit">Save</button>
 
